@@ -87,7 +87,7 @@ def rename_images(folder_path, target_folder):
 
     except Exception as e:
         print("Error:", e)
-  def main():
+def main():
     while True:
         print("\n===== IMAGE RENAMER TOOL =====")
         print("1. Rename Images")
