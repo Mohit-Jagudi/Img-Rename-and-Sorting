@@ -87,4 +87,68 @@ def rename_images(folder_path, target_folder):
 
     except Exception as e:
         print("Error:", e)
-  
+  def main():
+    while True:
+        print("\n===== IMAGE RENAMER TOOL =====")
+        print("1. Rename Images")
+        print("2. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == '1':
+            folder_path = input("Enter folder path: ").strip().strip('"')
+
+            if not os.path.exists(folder_path):
+                print("Invalid path!")
+                continue
+
+            print("\n1. Rename in same folder")
+            print("2. Create new folder")
+
+            sub_choice = input("Enter choice: ")
+
+            if sub_choice == '1':
+                rename_images(folder_path, folder_path)
+
+            elif sub_choice == '2':
+                print("\n1. Auto create folder")
+                print("2. Custom location")
+
+                new_choice = input("Enter choice: ")
+
+                if new_choice == '1':
+                    new_folder = os.path.join(folder_path, "Renamed_Images")
+                    os.makedirs(new_folder, exist_ok=True)
+
+                elif new_choice == '2':
+                    drive = input("\nEnter drive (C:/ D:/ E:/ etc): ").strip()
+                    folder_name = input("Enter new folder name: ")
+
+                    new_folder = os.path.join(drive, folder_name)
+
+                    # Check invalid drive/location
+                    if not os.path.exists(os.path.dirname(new_folder)):
+                        print("Invalid drive/location!")
+                        continue
+
+                    os.makedirs(new_folder, exist_ok=True)
+
+                else:
+                    print("Invalid choice")
+                    continue
+
+                rename_images(folder_path, new_folder)
+
+            else:
+                print("Invalid choice")
+
+        elif choice == '2':
+            print("Exiting...")
+            break
+
+        else:
+            print("Invalid option")
+
+
+if __name__ == "__main__":
+    main()
