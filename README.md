@@ -1,12 +1,11 @@
 # Smart Image Renamer
 
+
+Smart Image Renamer is a Python-based command-line tool designed to efficiently rename and organize image files in bulk. The tool allows users to rename images with custom formats, avoid duplicates, and optionally move files to a new folder.
 ## Problem Statement
 
 Managing large numbers of images manually is time-consuming and inefficient. Users often face issues like inconsistent naming, duplicate files, and poor organization.
 
-## Project Description
-
-Smart Image Renamer is a Python-based command-line tool designed to efficiently rename and organize image files in bulk. The tool allows users to rename images with custom formats, avoid duplicates, and optionally move files to a new folder.
 
 ## Objective
 
